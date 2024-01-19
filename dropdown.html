@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* .custom-dropdown {
+            width: 200px;
+            height: auto;
+            }
+
+        .dropdown-item {
+        margin-bottom: 10px;
+        } */
+
+        .trigger {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        cursor: pointer;
+        margin-bottom: 0 !important;
+        margin-top: 0;
+        }
+
+        .content {
+        display: none;
+        padding: 10px;
+        background-color: #f2f2f2;
+        }
+        .content li{
+            text-decoration: none;
+            list-style-type: none;
+            font-size: 18px;
+            padding: 5px 0;
+        }
+        .dropdown-item{
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-dropdown">
+        <div class="dropdown-item">
+          <h3 class="trigger">HOME</h3>
+          <div class="content">
+            <div class="">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown-item">
+          <h3 class="trigger">MAIN MENU</h3>
+          <div class="content">
+            <div class="">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </div>
+          </div>
+
+        </div>
+        <div class="dropdown-item">
+            <h3 class="trigger">ITEMS</h3>
+            <div class="content">
+              <div class="">
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+              </div>
+            </div>
+  
+          </div>
+        <!-- Add more items as needed -->
+      </div>
+<script>
+$(document).ready(function() {
+  // When a trigger is clicked
+  $(".trigger").click(function() {
+    // Toggle the visibility of the content
+    $(this).next(".content").slideToggle();
+    // Hide other open contents
+    $(".content").not($(this).next(".content")).slideUp();
+  });
+});
+
+</script>      
+</body>
+</html>
