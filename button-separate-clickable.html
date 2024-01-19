@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button class="custom-button" data-action="function1">Button 1</button>
+    <button class="custom-button" data-action="function2">Button 2</button>
+    <button class="custom-button" data-action="function3">Button 3</button>
+    <!-- button text -->
+    <p id="btn-para">this is Button</p>
+    
+    <script>
+        $(document).on('click', '.custom-button', function() {
+        // Get the data-action attribute to determine the function to execute
+        var action = $(this).data('action');
+
+        // Perform different actions based on the data-action attribute
+        switch (action) {
+            case 'function1':
+                function1();
+                break;
+            case 'function2':
+                function2();
+                break;
+            case 'function3':
+                function3();
+                break;
+            // Add more cases as needed
+
+            default:
+                // Default action if no matching case is found
+                break;
+        }
+    });
+
+    // Functions corresponding to each button
+    function function1() {
+        document.getElementById('btn-para').innerHTML="button 1"
+        console.log('Function 1 executed');
+    }
+
+    function function2() {
+        document.getElementById('btn-para').innerHTML="button 2"
+        console.log('Function 2 executed');
+    }
+
+    function function3() {
+        document.getElementById('btn-para').innerHTML="button 3"
+        console.log('Function 3 executed');
+    }
+    </script>
+</body>
+</html>
